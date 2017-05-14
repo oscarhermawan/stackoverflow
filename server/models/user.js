@@ -15,6 +15,10 @@ var userSchema = new Schema({
     type:String,
     required:true
   },
+  photo:{
+    type:String,
+    default:'https://tracker.moodle.org/secure/attachment/30912/f3.png'
+  },
   member_id:{
     type:String
   },

@@ -7,7 +7,9 @@ const passport = require('passport');
 const Strategy = require('passport-local').Strategy
 const api = require('./controllers/userController')
 
-mongoose.connect('mongodb://localhost/stackoverflow_oscar', (err)=>{
+app.use(cors())
+
+mongoose.connect('mongodb://localhost/stackoverflow_coba', (err)=>{
   if(err){
     console.log(err);
   } else {

@@ -18,11 +18,13 @@ methods.insertQuestion = function(req, res){
 
 //GET ONE BY ID
 methods.getById = function(req,res){
-  db.findById(req.params.id, function(error, record){
+  db.findOne({_id:req.params.id})
+  .populate('asked_by votes.voted_by answers.answer_by', 'username')
+  .exec((error, records)=>{
     if(error){
       res.send(error)
     } else {
-      res.send(record)
+      res.send(records)
     }
   })
 }//GET ONE BY ID

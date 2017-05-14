@@ -6,7 +6,7 @@ var answerSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref:'User'
   },
-  title:{
+  description:{
     type:String
   },
   createdAt:{
@@ -35,8 +35,13 @@ var questionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref:'User'
   },
+  title:{
+    type:String,
+    required:true
+  },
   description:{
-    type:String
+    type:String,
+    required:true
   },
   votes:[voteSchema],
   answers:[answerSchema],
